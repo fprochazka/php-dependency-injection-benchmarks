@@ -12,13 +12,13 @@ $container = $configurator->createContainer(); // compile
 
 
 //Trigger autoloader
-$j = $container->getService('j');
+$j = $container->createServiceJ();
 unset($j);
 
 $t1 = microtime(true);
 
 for ($i = 0; $i < 10000; $i++) {
-	$j = $container->getService('j');
+	$j = $container->createServiceJ();
 }
 
 $t2 = microtime(true);
